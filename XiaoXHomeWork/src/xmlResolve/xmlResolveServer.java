@@ -39,7 +39,7 @@ public class xmlResolveServer extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		synchronized (this) {// µ¥²¢·¢
+		synchronized (this) {//å•å¹¶å‘
 			Map jMap = new HashMap();
 			request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
@@ -49,7 +49,7 @@ public class xmlResolveServer extends HttpServlet {
 			String pattern = "^[A-Z0-9]+$";
 			if (!keyWords.matches(pattern)) {
 				jMap.put("success", "false");
-				jMap.put("msg", "´óĞ¡Ğ´×ÖÄ¸¼ÓÊı×Ö×éºÏ");
+				jMap.put("msg", "æ–‡ä»¶åå­—æ¯æˆ–æ•°å­—");
 				response.getWriter().append(JSON.toJSONString(jMap));
 				System.out.println(jMap);
 				return;
@@ -89,7 +89,7 @@ public class xmlResolveServer extends HttpServlet {
 				}
 				if (resList.size() == 0) {
 					jMap.put("success", "false");
-					jMap.put("msg", "ÎŞ¼ÇÂ¼");
+					jMap.put("msg", "æ— è®°å½•");
 					response.getWriter().append(JSON.toJSONString(jMap));
 					System.out.println(jMap);
 					return;
@@ -109,7 +109,7 @@ public class xmlResolveServer extends HttpServlet {
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼ş¼ĞÏÂµÄËùÓĞÎÄ¼ş
+	 * è¯»æ–‡ä»¶
 	 */
 	private Map<String, String> readfile(String filepath, String targetName)
 			throws Exception {
